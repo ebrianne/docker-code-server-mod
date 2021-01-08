@@ -2,7 +2,7 @@
 
 # Install ZSH
 echo "**** Installing zsh ****"
-apt-get update && apt-get install -y zsh
+apt-get update && apt-get install -y zsh wget
 
 # Install oh-my-zsh if not installed already
 if [ -d /config/.oh-my-zsh ]; then
