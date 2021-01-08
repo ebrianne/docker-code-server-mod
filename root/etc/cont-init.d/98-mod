@@ -17,7 +17,7 @@ fi
 
 chown -R abc:abc /config/.oh-my-zsh /config/.zshrc
 
-# Install kubectl and Helm in /bin
+# Install kubectl, Helm and docker client in /bin
 if [ -f /bin/kubectl ]; then
   echo "**** Kubectl is already installed ****"
 elif [ -f kubectl ]; then
@@ -36,4 +36,14 @@ elif [ -f helm ]; then
   mv helm /bin
 else
   echo "**** It looks like Helm was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
+fi
+
+if [ -f /bin/docker ]; then
+  echo "**** Docker CLI is already installed ****"
+elif [ -f docker ]; then
+  echo "**** Installing Docker CLI in /bin. ****"
+  chmod +x docker
+  mv docker /bin
+else
+  echo "**** It looks like Docker CLI was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
 fi
