@@ -47,3 +47,13 @@ elif [ -f docker ]; then
 else
   echo "**** It looks like Docker CLI was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
 fi
+
+if [ -f /bin/hadolint ]; then
+  echo "**** Hadolint is already installed ****"
+elif [ -f hadolint ]; then
+  echo "**** InstallingHadolint in /bin. ****"
+  chmod +x hadolint
+  mv hadolint /bin
+else
+  echo "**** It looks likeHadolint was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
+fi
