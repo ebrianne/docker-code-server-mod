@@ -7,12 +7,14 @@ The [Linuxserver.io](https://docs.linuxserver.io/) community enables the possibi
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-* [kubectl]()
-* [Helm]()
+* [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+* [Helm](https://helm.sh/)
+* [Hadolint](https://github.com/hadolint/hadolint)
+
 ## Building
 Build the container image `code-server-mod:latest`:
 
-    docker build -t <username>/code-server-mod:latest .
+    docker build -t code-server-mod:latest .
 ## Image
 Ready made images are hosted on Docker Hub. Use at your own risk:
 
