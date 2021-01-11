@@ -7,9 +7,8 @@ The [Linuxserver.io](https://docs.linuxserver.io/) community enables the possibi
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-* [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-* [Helm](https://helm.sh/)
-* [Hadolint](https://github.com/hadolint/hadolint)
+
+You can add custom binaries to ~/.local/bin
 
 ## Building
 Build the container image `code-server-mod:latest`:

@@ -2,7 +2,7 @@
 
 # Install ZSH
 echo "**** Installing zsh ****"
-apt-get update && apt-get install -y zsh wget golang
+apt-get update && apt-get install -y zsh
 
 # Install oh-my-zsh if not installed already
 if [ -d /config/.oh-my-zsh ]; then
@@ -16,54 +16,3 @@ else
 fi
 
 chown -R abc:abc /config/.oh-my-zsh /config/.zshrc
-
-# Install kubectl, Helm and docker client in /bin
-if [ -f /bin/kubectl ]; then
-  echo "**** Kubectl is already installed ****"
-elif [ -f kubectl ]; then
-  echo "**** Installing kubectl in /bin. ****"
-  chmod +x kubectl
-  mv kubectl /bin
-else
-  echo "**** It looks like kubectl was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
-fi
-
-if [ -f /bin/helm ]; then
-  echo "**** Helm is already installed ****"
-elif [ -f helm ]; then
-  echo "**** Installing Helm in /bin. ****"
-  chmod +x helm
-  mv helm /bin
-else
-  echo "**** It looks like Helm was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
-fi
-
-if [ -f /bin/docker ]; then
-  echo "**** Docker CLI is already installed ****"
-elif [ -f docker ]; then
-  echo "**** Installing Docker CLI in /bin. ****"
-  chmod +x docker
-  mv docker /bin
-else
-  echo "**** It looks like Docker CLI was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
-fi
-
-if [ -f /bin/hadolint ]; then
-  echo "**** Hadolint is already installed ****"
-elif [ -f hadolint ]; then
-  echo "**** Installing Hadolint in /bin. ****"
-  chmod +x hadolint
-  mv hadolint /bin
-else
-  echo "**** It looks like Hadolint was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
-fi
-
-if [ -f /bin/kubeseal ]; then
-  echo "**** Kubeseal is already installed ****"
-elif [ -f kubeseal ]; then
-  echo "**** Installing Kubeseal in /bin. ****"
-  chmod +x kubeseal
-  mv kubeseal /bin
-else
-  echo "**** It looks like Kubeseal was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
-fi
