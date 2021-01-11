@@ -2,7 +2,7 @@
 
 # Install ZSH
 echo "**** Installing zsh ****"
-apt-get update && apt-get install -y zsh wget
+apt-get update && apt-get install -y zsh wget golang
 
 # Install oh-my-zsh if not installed already
 if [ -d /config/.oh-my-zsh ]; then
@@ -51,9 +51,19 @@ fi
 if [ -f /bin/hadolint ]; then
   echo "**** Hadolint is already installed ****"
 elif [ -f hadolint ]; then
-  echo "**** InstallingHadolint in /bin. ****"
+  echo "**** Installing Hadolint in /bin. ****"
   chmod +x hadolint
   mv hadolint /bin
 else
-  echo "**** It looks likeHadolint was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
+  echo "**** It looks like Hadolint was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
+fi
+
+if [ -f /bin/kubeseal ]; then
+  echo "**** Kubeseal is already installed ****"
+elif [ -f kubeseal ]; then
+  echo "**** Installing Kubeseal in /bin. ****"
+  chmod +x kubeseal
+  mv kubeseal /bin
+else
+  echo "**** It looks like Kubeseal was manually deleted after install. Please recreate the code-server container to reinstall it. ****"
 fi
